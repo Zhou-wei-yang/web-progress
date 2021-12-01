@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交游天下</title>
+    <link rel="StyleSheet" href="StyleSheet.css">
+</head>
+
+<body>
+    <!--logol设计-->
+    <header>
+        <div>
+            <img src="resource/战忽局.png" class="header_image1" alt="网站logo">
+            <img src="resource/交游天下.png" class="header_image2" alt="网站名称-交游天下">
+            <p class="header_font">JIAO YOU TIAN XIA</p>
+        </div>
+        <audio controls>
+            <source src="resource/进击的巨人.mp3" type="audio/mpeg">
+            您的浏览器不支持该音频格式。
+        </audio>
+
+    </header>
+
+    <!--导航栏-->
+    <div>
+        <div class="menu">
+            <div>
+                <nav>
+                    <ul>
+                        <li><a class="active" href="">首 页</a></li>
+                        <li><a href="">景点介绍</a></li>
+                        <li><a href="">美食介绍</a></li>
+                        <li><a href="">旅游规划</a></li>
+                        <li><a href="">旅游攻略</a></li>
+                        <li><a href="">关于我们</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!--工具栏-->
+    <div class="tool">
+        <ul>
+            <li><a href="" class="tip"><img src="resource/登录.png" alt="登录"><span
+                        class="message">账户</span></a></li>
+            <li><a href="" class="tip"><img src="resource/消息.png" alt="消息"><span
+                        class="message">消息</span></a></li>
+            <li><a href="" class="tip"><img src="resource/地图.png" alt="地图"><span
+                        class="message">地图</span></a></li>
+            <li><a href="" class="tip"><img src="resource/交通.png" alt="交通"><span
+                        class="message">交通</span></a></li>
+            <li><a href="" class="tip"><img src="resource/退出.png" alt="退出"><span
+                        class="message">退出</span></a></li>
+        </ul>
+    </div>
+
+    <!--图片滚动-->
+    <!-- 轮播图容器 -->
+    <div id="carousel">
+        <ul id="_carousel">
+            <!-- 图片容器 -->
+            <li>
+                <img src="resource/初音壁纸.jpg" alt="">
+            </li>
+            <li>
+                <img src="resource/三大炮2.jfif" alt="">
+            </li>
+            <li>
+                <img src="resource/初音壁纸.jpg" alt="">
+            </li>
+            <li>
+                <img src="resource/初音壁纸.jpg" alt="">
+            </li>
+            <li>
+                <img src="resource/交游天下.png" alt="">
+            </li>
+        </ul>
+        <!-- 按钮组 -->
+        <div id="leftArrow" class="iconfont icon-arrow-lift"><img src="右滑.png"></div> <!-- 左箭头切换按钮 -->
+        <div id="rightArrow" class="iconfont icon-arrow-right"><img src="左滑.png"></div> <!-- 右箭头切换按钮 -->
+        <div id="sliderBtn"></div> <!-- 切换按钮组 -->
+    </div>
+
+    <!--外部js文件的引入-->
+    <script type="text/javascript" src="JS1.js"></script>
+
+    <div class="font_size">
+        <p><b>今 日 推 荐</b></p>
+    </div>
+    <!--网格布局-->
+    <div class="grid-container">
+        <div>
+            <a>1</a>
+        </div>
+        <div>
+            <a href=""><img src="resource/三大炮2.jfif"></a>
+            <p>美食介绍</p>
+        </div>
+        <div>
+            <a>3</a>
+        </div>
+        <div>
+            <a href=""><img src="resource/旅游攻略.jpg"></a>
+        </div>
+        <div>
+            <a href=""><img src="resource/景点推荐.jpg"></a>
+        </div>
+        <div>
+            <a>6</a>
+        </div>
+        <div>
+            <a href=""><img src="resource/旅游规划.jpg"></a>
+        </div>
+    <div>
+            <a>8</a>
+        </div>
+    </div>
+
+    <!--底部-->
+    <footer>
+        <div>
+            <p style="color:darkgray">Designed By <span style="color:red">SFA</span>
+        </div>
+    </footer>
+</body>
+
+</html>
