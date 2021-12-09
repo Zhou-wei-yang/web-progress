@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -20,7 +20,8 @@
             <source src="resource/进击的巨人.mp3" type="audio/mpeg">
             您的浏览器不支持该音频格式。
         </audio>
-
+        <iframe scrolling="no" src="https://tianqiapi.com/api.php?style=tt&skin=pitaya"
+            allowtransparency="true"></iframe>
     </header>
 
     <!--导航栏-->
@@ -44,16 +45,13 @@
     <!--工具栏-->
     <div class="tool">
         <ul>
-            <li><a href="" class="tip"><img src="resource/登录.png" alt="登录"><span
-                        class="message">账户</span></a></li>
-            <li><a href="" class="tip"><img src="resource/消息.png" alt="消息"><span
-                        class="message">消息</span></a></li>
-            <li><a href="" class="tip"><img src="resource/地图.png" alt="地图"><span
-                        class="message">地图</span></a></li>
-            <li><a href="" class="tip"><img src="resource/交通.png" alt="交通"><span
-                        class="message">交通</span></a></li>
-            <li><a href="" class="tip"><img src="resource/退出.png" alt="退出"><span
-                        class="message">退出</span></a></li>
+            <li><a href="" class="tip"><img src="resource/登录.png" alt="登录"><span class="message">账户</span></a></li>
+            <li><a class="tip input"><img src="resource/搜索.png" alt="搜索"><span class="message">搜索,创建一个大师球</span></a>
+            </li>
+            <li><a href="" class="tip"><img src="resource/消息.png" alt="消息"><span class="message">消息</span></a></li>
+            <li><a href="" class="tip"><img src="resource/地图.png" alt="地图"><span class="message">地图</span></a></li>
+            <li><a href="" class="tip"><img src="resource/交通.png" alt="交通"><span class="message">交通</span></a></li>
+            <li><a href="" class="tip"><img src="resource/退出.png" alt="退出"><span class="message">退出</span></a></li>
         </ul>
     </div>
 
@@ -69,62 +67,180 @@
                 <img src="resource/三大炮2.jfif" alt="">
             </li>
             <li>
-                <img src="resource/初音壁纸.jpg" alt="">
+                <img src="resource/学习天堂卷王圣地.jpg" alt="">
             </li>
             <li>
-                <img src="resource/初音壁纸.jpg" alt="">
+                <img src="resource/四姑娘山.jpg" alt="">
             </li>
             <li>
                 <img src="resource/交游天下.png" alt="">
             </li>
         </ul>
         <!-- 按钮组 -->
-        <div id="leftArrow" class="iconfont icon-arrow-lift"><img src="右滑.png"></div> <!-- 左箭头切换按钮 -->
-        <div id="rightArrow" class="iconfont icon-arrow-right"><img src="左滑.png"></div> <!-- 右箭头切换按钮 -->
+        <div id="leftArrow" class="iconfont icon-arrow-lift"><img src="resource/右滑.png" alt="右滑"></div> <!-- 左箭头切换按钮 -->
+        <div id="rightArrow" class="iconfont icon-arrow-right"><img src="resource/左滑.png" alt="左滑"></div>
+        <!-- 右箭头切换按钮 -->
         <div id="sliderBtn"></div> <!-- 切换按钮组 -->
     </div>
-
-    <!--外部js文件的引入-->
-    <script type="text/javascript" src="JS1.js"></script>
 
     <div class="font_size">
         <p><b>今 日 推 荐</b></p>
     </div>
     <!--网格布局-->
-    <div class="grid-container">
-        <div>
-            <a>1</a>
-        </div>
-        <div>
-            <a href=""><img src="resource/三大炮2.jfif"></a>
-            <p>美食介绍</p>
-        </div>
-        <div>
-            <a>3</a>
-        </div>
-        <div>
-            <a href=""><img src="resource/旅游攻略.jpg"></a>
-        </div>
-        <div>
-            <a href=""><img src="resource/景点推荐.jpg"></a>
-        </div>
-        <div>
-            <a>6</a>
-        </div>
-        <div>
-            <a href=""><img src="resource/旅游规划.jpg"></a>
-        </div>
-    <div>
-            <a>8</a>
-        </div>
+    <!--<div class="wall">
+        <a href="">
+            <img id="grid" src="resource/三大炮2.jfif">
+            <h2>美食推荐</h2>
+        
+
+        <a href="">
+            <img id="grid" src="resource/旅游攻略.jpg">
+            <h2>攻略推荐</h2>
+        </a>
+
+        <a href="">
+            <img id="grid" src="resource/景点推荐.jpg">
+            <h2>景点推荐</h2>
+        </a>
+
+        <a href="">
+            <img id="grid" src="resource/旅游规划.jpg">
+            <h2>旅游规划</h2>
+        </a>
+    </div></a>-->
+
+    <!--搜索框-->
+    <div class="search">
+        <input class="search-input" placeholder="请输入搜索内容"></input>
+        <a class="search-icon" href="#"><img src="resource/搜索.png" width="30" height="30"></a>
     </div>
 
-    <!--底部-->
-    <footer>
-        <div>
-            <p style="color:darkgray">Designed By <span style="color:red">SFA</span>
+    <div class="background">
+        <div class="tab_head">
+            <!--TAB标签页头部-->
+            <ul>
+                <li id="tab1" data-season="1" class="active"><strong>景点推荐</strong></li>
+                <li id="tab2" data-season="2"><strong>美食推荐</strong></li>
+                <li id="tab3" data-season="3"><strong>旅游攻略</strong></li>
+                <li id="tab4" data-season="4"><strong>旅游规划</strong></li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="content" id="content_1">
+            <div class="content_img">
+                <img src="resource/三大炮2.jfif" alt="美食">
+            </div>
+            <div class="content_message">
+                <h1>景点推荐</h1>
+                <ul>
+                    <li><a href="#">
+                            <p>delicious</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好玩</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好玩</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好玩</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="content" id="content_2">
+            <div class="content_img">
+                <img src="resource/初音壁纸.jpg" alt="美食">
+            </div>
+            <div class="content_message">
+                <h1>美食推荐</h1>
+                <ul>
+                    <li><a href="#">
+                            <p>delicious</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content" id="content_3">
+            <div class="content_img">
+                <img src="resource/初音壁纸.jpg" alt="美食">
+            </div>
+            <div class="content_message">
+                <h1>旅游攻略</h1>
+                <ul>
+                    <li><a href="#">
+                            <p>delicious</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>吃屎啊你</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content" id="content_4">
+            <div class="content_img">
+                <img src="resource/初音壁纸.jpg" alt="美食">
+            </div>
+            <div class="content_message">
+                <h1>旅游规划</h1>
+                <ul>
+                    <li><a href="#">
+                            <p>delicious</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>就是一个测试而已</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>好吃</p>
+                        </a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!--底部-->
+        <footer>
+            <div>
+                <p style="color:darkgray">Designed By <span style="color:red">SFA</span>
+            </div>
+        </footer>
 </body>
 
 </html>
+
+<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="JS1.js"></script>
