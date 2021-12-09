@@ -1,3 +1,4 @@
+//图片轮播器
 var imgArr = []; // 图片数组
 var curIndex = 0; // 当前显示图片
 var timer = null; // 定时器
@@ -5,16 +6,16 @@ var clickAllow = true; // 锁，是否允许用户点击
 var btnList = []; // 右下角切换按钮组
 function slide(slideContainer, targetIndex = curIndex + 1) {
     var width = 0; // 计算切换图片要滑动的距离
-    
+
     if (targetIndex >= curIndex) {
         for (let i = curIndex; i < targetIndex; ++i)
-        width += imgArr[i].width; // 正向切换则计算本图片到后续图片宽度
+            width += imgArr[i].width; // 正向切换则计算本图片到后续图片宽度
     } else {
-        if (targetIndex === -1) 
-        width = imgArr[imgArr.length - 1].width; // 特殊处理第一张图片
+        if (targetIndex === -1)
+            width = imgArr[imgArr.length - 1].width; // 特殊处理第一张图片
         else
-        for (let i = targetIndex; i < curIndex; ++i) 
-        width += imgArr[i].width; // 逆向切换处理宽度
+            for (let i = targetIndex; i < curIndex; ++i)
+                width += imgArr[i].width; // 逆向切换处理宽度
     }
     clickAllow = false; // 不允许用户点击
     var step = width / 60; // 动态设置步长
@@ -137,3 +138,35 @@ function eventDispose(carousel, slideContainer, config) {
         slide(slideContainer)
     }, config.interval); // 设置定时器定时切换
 })();
+
+
+
+
+//搜索开关实现模块
+var view = 0 //判断大师球状态
+$(document).ready(function () {
+    //搜索框部分
+    $(".search").hide(function () {
+        $(".input").click(function () {
+            $(".search").toggle();
+        });
+    })
+});
+
+//TAB标签页部分
+$(function () {
+    var select = 1; //当前选中
+    var num; //目标选中
+    $("#content_2").hide();
+    $("#content_3").hide();
+    $("#content_4").hide();
+    $("#tab1,#tab2,#tab3,#tab4").click(function () {
+        //获取标签页代号
+        var num = $.trim($(this).attr("data-season"));
+        if (select != num) {
+            $("#content_" + select).hide();
+            $("#content_" + num).show();
+            select = num;
+        }
+    });
+})
