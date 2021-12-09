@@ -1,4 +1,4 @@
-﻿html {
+html {
     height: 100%;
 }
 
@@ -6,6 +6,8 @@ body {
     /*background-color: #3498DB*/
     margin: 0;
     height: 100%;
+    background-color: #ebebe0bb;
+    /*background-image: linear-gradient(to bottom, #00b4db,#0083b0);*/
 }
 
 /*顶层logo、登录、音乐播放集成模块控制*/
@@ -48,20 +50,30 @@ header {
     width: 30%;
 }
 
+/*天气预报*/
+iframe {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+    height: 85px;
+    float: right;
+    top: -3%;
+}
+
 /*音乐播放控制*/
 audio {
     width: 15%;
     padding: 0;
     margin: 0;
     position: absolute;
-    visibility: hidden;
+    display: none;
 }
 
 /*导航栏菜单控制*/
 .menu {
     width: 100%;
     height: auto;
-    display: block;
     background-color: #FFA500;
     margin: 0;
     padding: 0;
@@ -73,35 +85,35 @@ audio {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    width: 84%;
+    width: 100%;
 }
 
 /*导航栏菜单选项浮动方向设置*/
 .menu ul li {
     float: left;
-    width: 14%;
+    width: 16.66%;
 }
 
 /*导航栏菜单选项控制*/
 .menu li a {
-    font-size: 1.5em;
+    font-size: 1.8em;
     display: block;
     color: white;
     text-align: center;
     margin: 0;
-    padding: 4% 1%;
+    padding: 2% 1%;
     text-decoration: none;
 }
 
 /*导航栏选项鼠标移动效果*/
 .menu li a:hover {
-    background-color: #555;
+    background-color: rgba(85, 85, 85, 0.7);
     color: white;
 }
 
 /*当前选中状态*/
 .menu li a:active {
-    background-color: #3498DB;
+    background-color: #3498dbbe;
 }
 
 /*工具栏菜单控制*/
@@ -109,7 +121,7 @@ audio {
     width: 3%;
     display: block;
     background-color: rgba(170, 170, 170, 0.384);
-    margin-top: 5%;
+    margin-top: 3%;
     margin-left: 97%;
     margin-right: 0;
     padding: 0;
@@ -150,26 +162,26 @@ audio {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    right:100%;
-    top:30%;
+    right: 100%;
+    top: 30%;
 }
 
 /*工具栏菜单列表触发后属性*/
-.tip:hover span{
+.tip:hover span {
     visibility: visible;
     opacity: 0;
-    transition: opacity 2s;
+    transition: opacity 3s;
 }
 
 #carousel {
-    width: 80%;
+    width: 70%;
     position: absolute;
     overflow: hidden;
     border-color: #3498DB;
     border-style: groove;
     border-width: 10px;
     position: relative;
-    margin: 0% auto;
+    margin: 0.5% auto;
 }
 
 #carousel>ul {
@@ -184,8 +196,8 @@ audio {
 }
 
 #carousel>ul>li>img {
-    width: 1400px;
-    height:75%
+    width: 1085px;
+    height: 75%
 }
 
 /* 控制按钮的样式 */
@@ -206,15 +218,16 @@ audio {
 }
 
 /*左右按钮图片设置*/
-#rightArrow  img{
-   width:100%;
-   height: 100%;
-   position: absolute;
-}
-#leftArrow  img{
-    width:100%;
+#rightArrow img {
+    width: 100%;
     height: 100%;
- }
+    position: absolute;
+}
+
+#leftArrow img {
+    width: 100%;
+    height: 100%;
+}
 
 /*左右按钮调整*/
 #leftArrow {
@@ -251,58 +264,183 @@ audio {
 }
 
 /*板块标题字体控制*/
-.font_size
-{
-    font-size: 2em;
+.font_size {
+    font-size: 3em;
     text-align: center;
     padding: 0;
     margin: 3% 0%;
 }
 
+/*大师球属性控制*/
+.search{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(77, 77, 77, 0.9);
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    animation: input 1s;
+}
+/*CSS3新动画特性*/
+@keyframes input
+{
+    from{
+        height: 100px;
+        background-color: rgba(255, 196, 0, 0.9);
+    }
+    to{
+        height: 40px;
+        background-color: rgba(77, 77, 77, 0.9);
+    }
+}
 
-.grid-container
+/* 设置输入框的样式*/
+.search-input{
+    border: none;
+    outline: none;
+    padding:0;
+    background-color:rgb(112, 111, 111,0);;
+    color: rgb(87, 207, 255);
+    font-size: 1.5em;
+    transition: 0.4s;
+    width: 0;
+    line-height: 40px;
+    float: left;
+}
+
+/* 设置字体图标的容器样式*/
+.search-icon{
+    color: #21aec7;
+    float: right;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* 当鼠标移入时，动态显示输入框 */
+.search:hover > .search-input{
+    width: 400px;
+}
+/* 当鼠标移入时，设置search-icon这个元素背景色 */
+.search:hover > .search-icon{
+    background-color: #FFA500;
+}
+
+/*tab页标签设置*/
+.tab_head{
+    width: 80%;
+    height:8% ;
+    margin: 0 auto;
+    padding: 0;
+}
+.tab_head ul li{
+    float: left;
+	list-style: none;
+	width: 25%;
+	height: 6%;
+    padding: 0.5% 0%;
+	text-align: center;
+	font-size: 1.8em;
+    color:black;
+    background-color: #c7c78ebb;
+}
+
+/*tab页标签背景设置*/
+.background
 {
     width: 100%;
-    display: grid;
-    grid-template-columns:25% 25% 25% 25%;
-    grid-template-rows: 44.5% 44.5%;
-    grid-gap: 0;
+    height: 65%;
+    background-color: rgb(112, 111, 111,0);
+    background-image: linear-gradient(to right, rgb(145, 35,226,0.5), rgb(44, 155, 224,0.5));
     margin: 0;
     padding: 0;
 }
 
-.grid-container>div{
-    padding: 0;
+/*tab页标签状态设定*/
+.tab_head ul li:hover{
+    background-color: rgb(44, 155, 224,0.5);
+}
+.tab_head ul li:active{
+    background-color: rgb(87, 207, 255,0.5);
+}
+
+/*tab页标签页内容设置*/
+.content
+{
+    position:relative;
     margin: 0;
-    background-color: #3498DB;
-    text-align: center;
-    width:25%；
-}
-
-.grid-container>div>a>img{
     padding: 0;
+    width: 90%;
+    height: 94%;
+    color: rgb(85, 26, 139);
+}
+
+/*tab页内容通知列表设置*/
+.content ul
+{
+    list-style: none;
+    position: absolute;
     margin: 0;
-    width:100%;
-    height:100%;
-    opacity: 0.75;
-    display: block;
+    padding: 0;
 }
 
-.grid-container>div>a:hover{
-    opacity: 0;
+/*tab页内容通知左侧图像设置*/
+.content_img
+{
+    width:50%;
+    height: 95.5%;
+    margin: 0;
+    padding: 0;
+    margin-left:7%;
+    overflow: hidden;
+}
+.content_img img
+{
+    width: 100%;
+    background-size: contain;
+    height: 100%;
+    height: auto;
+    transition: width 4s;
+    transition-timing-function: linear;
+}
+.content_img img:hover
+{
+    width: 105%;
 }
 
-.grid-container>div>p{
-    color: #FFA500;
+/*tab页内容通知板块设置*/
+.content_message{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    margin-left: 62%;
+    top:-0.5%;
+    width: 50%;
+}
+
+/*tab页内容通知链接设置*/
+.content ul li a{
+    text-decoration: none;
+    font-size: 1.5em;
+    width: 70%;
+}
+
+.content ul li a:hover{
+    color: rgba(255, 255, 255, 0.678);
 }
 
 /*页脚控制信息*/
 footer {
     position: relative;
-    width: 100%;
     text-align: center;
-    width:100%;
-    height:auto;
+    height: 5%;
     padding: 0;
-    margin:10px 0;
+    margin:0;
+    padding-bottom: 1%;
 }
+
